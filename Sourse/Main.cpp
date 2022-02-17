@@ -5,6 +5,7 @@ using namespace std;
 
 #include "../Head/Screen.h"
 #include "../Head/GameLoop.h"
+#include "../Head/Graphic.h"
 
 Screen mainScreen;
 GameLoop mainLoop(1);
@@ -24,7 +25,7 @@ void GameLogic()
 {
     mainScreen.Reset();
 
-    mainScreen.TestInit();
-
+    Graphic::DrawRect(&mainScreen, 10, 10, 4, 5);
+    // mainScreen.TestInit();
     mainScreen.DisPlay();
 }

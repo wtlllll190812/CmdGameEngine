@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <iostream>
 
 #include "../Head/Screen.h"
 
@@ -75,6 +74,7 @@ void Screen::DisPlay(void)
                 else
                     GoToPos(i, j + 1);
             }
+            FB.currentData->data[i][j].changed = false;
         }
     }
 }
@@ -110,4 +110,9 @@ void Screen::GoToPos(short x, short y)
 {
     COORD c{x, y};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
+
+void Screen::DrawPixel(int x, int y, string ch, int color)
+{
+    FB.DrawPixel(x, y, ch, color);
 }

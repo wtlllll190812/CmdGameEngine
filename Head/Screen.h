@@ -1,6 +1,7 @@
 #ifndef SCREEN_H_
 #define SCREEN_H_
 
+#include <iostream>
 using namespace std;
 
 #define SCREENSIZE_X 129
@@ -8,11 +9,12 @@ using namespace std;
 
 typedef struct _ScreenData //像素数据
 {
-    bool changed = false; //脏标识
+    bool changed; //脏标识
     string ch;
     int color;
     _ScreenData()
     {
+        changed = false;
         ch = "#";
         color = 01;
     }
@@ -48,6 +50,7 @@ public:
     void Reset();
     void ScreenPrint(string s, int color);
     void GoToPos(short x, short y);
+    void DrawPixel(int x, int y, string ch, int color);
 
 private:
     FrameBuffer FB;
