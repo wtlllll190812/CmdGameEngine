@@ -19,9 +19,10 @@ void Component::OnUpdate()
 }
 
 
-Renderer::Renderer() : Component()
+Renderer::Renderer(Screen* screen) : Component()
 {
-
+	s = screen;
+	s->Reset();
 }
 void Renderer::OnAdd()
 {
@@ -34,6 +35,7 @@ void Renderer::OnRemove()
 void Renderer::OnUpdate()
 {
 	Debug::Instance().Log("Component 'Renderer' Updated");
+	Graphic::DrawRect(s, 10, 10, 4, 5);
 }
 
 

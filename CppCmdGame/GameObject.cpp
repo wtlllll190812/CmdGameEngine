@@ -8,6 +8,7 @@ GameObject::GameObject()
 
 void GameObject::Update()
 {
+    (*components.begin())->OnUpdate();
     for (auto it = components.begin(); it != components.end(); ++it)
     {
         (*it)->OnUpdate();

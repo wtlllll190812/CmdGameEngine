@@ -2,8 +2,11 @@
 #define _COMPONENT_H_
 
 #include "GameObject.h"
+#include "Graphic.h"
+#include "Screen.h"
 
 class GameObject;
+class Screen;
 
 class Component
 {
@@ -19,9 +22,11 @@ public:
 class Renderer : public Component
 {
 public:
-    Renderer();
+    Renderer(Screen *s);
     void OnAdd();
     void OnRemove();
     void OnUpdate();
+private:
+    Screen* s;
 };
 #endif

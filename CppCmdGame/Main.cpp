@@ -14,21 +14,27 @@ Screen mainScreen;
 GameLoop mainLoop(30);
 GameObject game;
 void GameLogic();
-
+void GameInit();
 
 forward_list<GameObject*> gameObjects;
 
 int main()
-{
-    Renderer r;
+{ 
+    Renderer r(&mainScreen);
     game.Addcomponent(&r);
-    Debug::Instance().Log("sdsdsd");
+    gameObjects.push_front(&game);
+    GameInit();
+    Debug::Instance().Log("Game started");
     while (true)
     {
         GameLogic();
     }
 
     return 0;
+}
+void GameInit()
+{
+    mainScreen.Reset();
 }
 void GameLogic()
 {
