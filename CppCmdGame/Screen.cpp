@@ -23,6 +23,23 @@ void FrameBuffer::Draw(frameData d) //写入数据
     }
 }
 
+void FrameBuffer::DataInit()
+{
+    for (int j = 0; j < SCREENSIZE_Y; j++)
+    {
+        for (int i = 0; i < SCREENSIZE_X; i++)
+        {
+            if (nextData->data[i][j] == currentData->data[i][j])
+                nextData->data[i][j].changed = false;
+            else
+            {
+                nextData->data[i][j].changed = true;
+            }
+            currentData->data[i][j] = PZero;
+        }
+    }
+}
+
 void FrameBuffer::DrawPixel(int x, int y, string ch, int color)
 {
     if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
@@ -35,25 +52,7 @@ void FrameBuffer::DrawPixel(int x, int y, string ch, int color)
 
 void FrameBuffer::Swap() //交换缓存区
 {
-    for (int j = 0; j < SCREENSIZE_Y; j++)
-    {
-        for (int i = 0; i < SCREENSIZE_X; i++)
-        {
-            if (nextData->data[i][j] == currentData->data[i][j])
-                nextData->data[i][j].changed = false;
-            else
-            {
-                nextData->data[i][j].changed = true;
-            }
-        }
-    }
-    for (int j = 0; j < SCREENSIZE_Y; j++)
-    {
-        for (int i = 0; i < SCREENSIZE_X; i++)
-        {
-            currentData->data[i][j] = PZero;
-        }
-    }
+    DataInit();
     frameData *temp = nextData;
     nextData = currentData;
     currentData = temp;
@@ -87,16 +86,9 @@ void Screen::DisPlay(void)
         {          
             if (FB.currentData->data[i][j].changed)
             {
+                GoToPos(i, j);
                 ScreenPrint(FB.currentData->data[i][j].ch, FB.currentData->data[i][j].color);
             }
-            else
-            {
-                if (i < SCREENSIZE_X - 1)
-                    GoToPos(i + 1, j);
-                else
-                    GoToPos(i, j + 1);
-            }
-            FB.currentData->data[i][j].changed = true;
         }
         ScreenPrint("\n",0);
     }

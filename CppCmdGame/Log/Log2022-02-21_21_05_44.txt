@@ -1,0 +1,7 @@
+Component 'Transform' Added
+Component 'Renderer' Added
+Game started
+1010
+GetKeyDown:K
+GetKeyDown:K
+GetKeyDown:K

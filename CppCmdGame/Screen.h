@@ -39,6 +39,7 @@ public:
     void Draw(frameData d); //写入数据并交换缓存区
     void DrawPixel(int x, int y, string ch, int color);
     void Swap(); //交换缓存区
+    void DataInit();//初始化数据
 
 private:
     frameData data[2];

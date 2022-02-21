@@ -9,6 +9,7 @@ using namespace std;
 #include "GameObject.h"
 #include "Component.h"
 #include "DebugLog.h"
+#include "Input.h"
 
 Screen mainScreen;
 GameLoop mainLoop(30);
@@ -30,10 +31,9 @@ int main()
     GameInit();
     Debug::Instance().Log("Game started");
     Debug::Instance().Log(t.position->ToString());
-
     while (true)
-    {
-        t.Translate(Vector2(1, 0), 0.1f);
+    {  
+        t.Translate(Vector2(1, 0), 0.01f);
 
         GameLogic();
     }
