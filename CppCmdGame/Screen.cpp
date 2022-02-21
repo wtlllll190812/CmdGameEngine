@@ -10,7 +10,6 @@ FrameBuffer::FrameBuffer()
 
 void FrameBuffer::Draw(frameData d) //写入数据
 {
-
     for (int j = 0; j < SCREENSIZE_Y; j++)
     {
         for (int i = 0; i < SCREENSIZE_X; i++)
