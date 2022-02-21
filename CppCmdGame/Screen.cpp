@@ -1,6 +1,9 @@
 #include <windows.h>
 
 #include "Screen.h"
+#include "DebugLog.h"
+
+const PixelData FrameBuffer::PZero = { false,"#",0 };
 
 FrameBuffer::FrameBuffer()
 {
@@ -14,28 +17,46 @@ void FrameBuffer::Draw(frameData d) //写入数据
     {
         for (int i = 0; i < SCREENSIZE_X; i++)
         {
-            if (d.data[i][j].ch != currentData->data[i][j].ch || d.data[i][j].color != currentData->data[i][j].color)
-            {
-                nextData->data[i][j].ch = d.data[i][j].ch;
-                nextData->data[i][j].color = d.data[i][j].color;
-                nextData->data[i][j].changed = true;
-            }
-            else if (!nextData->data[i][j].changed)
-            {
-                nextData->data[i][j].changed = false;
-            }
+            nextData->data[i][j].ch = d.data[i][j].ch;
+            nextData->data[i][j].color = d.data[i][j].color;
         }
     }
 }
 
 void FrameBuffer::DrawPixel(int x, int y, string ch, int color)
 {
-     if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
+    if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
     {
         nextData->data[x][y].ch = ch;
         nextData->data[x][y].color = color;
         nextData->data[x][y].changed = true;
     }
+}
+
+void FrameBuffer::Swap() //交换缓存区
+{
+    for (int j = 0; j < SCREENSIZE_Y; j++)
+    {
+        for (int i = 0; i < SCREENSIZE_X; i++)
+        {
+            if (nextData->data[i][j] == currentData->data[i][j])
+                nextData->data[i][j].changed = false;
+            else
+            {
+                nextData->data[i][j].changed = true;
+            }
+        }
+    }
+    for (int j = 0; j < SCREENSIZE_Y; j++)
+    {
+        for (int i = 0; i < SCREENSIZE_X; i++)
+        {
+            currentData->data[i][j] = PZero;
+        }
+    }
+    frameData *temp = nextData;
+    nextData = currentData;
+    currentData = temp;
 }
 
 Screen::Screen()
@@ -45,12 +66,6 @@ Screen::Screen()
     GetConsoleCursorInfo(handle, &CursorInfo);
     CursorInfo.bVisible = false;
     SetConsoleCursorInfo(handle, &CursorInfo);
-}
-void FrameBuffer::Swap() //交换缓存区
-{
-    frameData *temp = nextData;
-    nextData = currentData;
-    currentData = temp;
 }
 
 void Screen::Clean(void)
@@ -69,7 +84,7 @@ void Screen::DisPlay(void)
     for (int j = 0; j < SCREENSIZE_Y; j++)
     {
         for (int i = 0; i < SCREENSIZE_X; i++)
-        {
+        {          
             if (FB.currentData->data[i][j].changed)
             {
                 ScreenPrint(FB.currentData->data[i][j].ch, FB.currentData->data[i][j].color);
@@ -81,30 +96,10 @@ void Screen::DisPlay(void)
                 else
                     GoToPos(i, j + 1);
             }
-            FB.currentData->data[i][j].changed = false;
+            FB.currentData->data[i][j].changed = true;
         }
+        ScreenPrint("\n",0);
     }
-}
-
-void Screen::TestInit()
-{
-    frameData temp;
-
-    for (int j = 0; j < SCREENSIZE_Y; j++)
-    {
-        for (int i = 0; i < SCREENSIZE_X; i++)
-        {
-            if (i < SCREENSIZE_X - 1)
-                temp.data[i][j].ch = "#";
-            else
-                temp.data[i][j].ch = "\n";
-            if (i > 10)
-                temp.data[i][j].color = rand() % 256 + 1;
-            else
-                temp.data[i][j].color = 15;
-        }
-    }
-    FB.Draw(temp);
 }
 
 void Screen::ScreenPrint(string s, int color)
@@ -123,3 +118,10 @@ void Screen::DrawPixel(int x, int y, string ch, int color)
 {
     FB.DrawPixel(x, y, ch, color);
 }
+
+bool operator==(const PixelData& p1, const PixelData& p2)
+{
+    return p1.ch==p2.ch&&p1.color==p2.color;
+}
+
+
