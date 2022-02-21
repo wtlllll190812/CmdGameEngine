@@ -36,6 +36,9 @@
     <ClCompile Include="Screen.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -51,6 +54,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Screen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

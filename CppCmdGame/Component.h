@@ -4,9 +4,11 @@
 #include "GameObject.h"
 #include "Graphic.h"
 #include "Screen.h"
+#include "Engine.h"
 
 class GameObject;
 class Screen;
+class Transform;
 
 class Component
 {
@@ -28,5 +30,19 @@ public:
     void OnUpdate();
 private:
     Screen* s;
+    Transform* tr;
+};
+
+class Transform : public Component
+{
+public:
+    Vector2* position;
+    float* Angle;
+    Transform();
+    Transform(float,float);
+    void Translate(Vector2 angle,float speed);
+    void OnAdd();
+    void OnRemove();
+    void OnUpdate();
 };
 #endif

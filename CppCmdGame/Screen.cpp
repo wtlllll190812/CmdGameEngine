@@ -31,7 +31,7 @@ void FrameBuffer::Draw(frameData d) //写入数据
 
 void FrameBuffer::DrawPixel(int x, int y, string ch, int color)
 {
-    if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
+     if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
     {
         nextData->data[x][y].ch = ch;
         nextData->data[x][y].color = color;

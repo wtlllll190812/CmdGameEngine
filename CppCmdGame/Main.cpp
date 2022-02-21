@@ -20,13 +20,21 @@ forward_list<GameObject*> gameObjects;
 
 int main()
 { 
+    Transform t(10.0f,10.0f);
     Renderer r(&mainScreen);
+    
+    game.Addcomponent(&t);   
     game.Addcomponent(&r);
+
     gameObjects.push_front(&game);
     GameInit();
     Debug::Instance().Log("Game started");
+    Debug::Instance().Log(t.position->ToString());
+
     while (true)
     {
+        t.Translate(Vector2(1, 0), 0.1f);
+
         GameLogic();
     }
 
@@ -40,12 +48,10 @@ void GameLogic()
 {
     mainScreen.Reset();
 
-    for (auto it = gameObjects.begin(); it != gameObjects.end(); ++it)
+    for (auto it = gameObjects.begin(); it != gameObjects.end(); it++)
     {
         (*it)->Update();
     }
-    
-    Graphic::DrawRect(&mainScreen, 10, 10, 4, 5);
 
     mainScreen.DisPlay();
 }
