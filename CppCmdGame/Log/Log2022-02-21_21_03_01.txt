@@ -1,4 +1,0 @@
-Component 'Transform' Added
-Component 'Renderer' Added
-Game started
-1010

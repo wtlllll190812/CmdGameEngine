@@ -7,14 +7,14 @@ void GameLoop::Update(void (*f)(void))
 }
 void GameLoop::FixedUpdate(void (*f)(void))
 {
-    if (GetTickCount() - lastFrame > 1000 / frame)
+    if (GetTickCount64() - lastFrame > 1000 / frame)
     {
-        lastFrame = GetTickCount();
+        lastFrame = GetTickCount64();
         (*f)();
     }
 }
 GameLoop::GameLoop(float frame)
 {
     this->frame = frame;
-    lastFrame = GetTickCount();
+    lastFrame = GetTickCount64();
 }

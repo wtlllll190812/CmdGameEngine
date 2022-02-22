@@ -63,8 +63,8 @@ Transform::Transform(float x, float y)
 
 void Transform::Translate(Vector2 angle, float speed)
 {
-	(*position) = (*position) + angle * speed;
-	Debug::Instance().Log(position->ToString());
+	(*position) = (*position) - angle * speed;
+	Debug::Instance().Log("Move to"+position->ToString());
 }
 
 void Transform::OnAdd()

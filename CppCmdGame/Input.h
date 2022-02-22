@@ -2,6 +2,10 @@
 #define _INPUT_H_
 #include <conio.h>
 #include <iostream>
+#include <format>
+#include <windows.h>
+
+using namespace std;
 
 enum class KeyCode
 {

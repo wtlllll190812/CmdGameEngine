@@ -108,6 +108,10 @@ void Screen::GoToPos(short x, short y)
 
 void Screen::DrawPixel(int x, int y, string ch, int color)
 {
+    if (x > SCREENSIZE_X || y > SCREENSIZE_Y || x < 0 || y < 0)
+    {
+        return;
+    }
     FB.DrawPixel(x, y, ch, color);
 }
 

@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<fstream>
+#include<sstream>
 #include<ctime>
 using namespace std;
 
@@ -12,6 +13,8 @@ public:
 	Debug();
 	~Debug();
 	void Log(string message);
+	void Log(char* message);
+	void Log(int message);
 	static Debug& Instance();
 private:
 	ofstream file;

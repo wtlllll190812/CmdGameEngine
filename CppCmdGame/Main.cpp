@@ -12,39 +12,41 @@ using namespace std;
 #include "Input.h"
 
 Screen mainScreen;
-GameLoop mainLoop(30);
+GameLoop mainLoop(20);
 GameObject game;
-void GameLogic();
-void GameInit();
+Transform t(10.0f,10.0f);
+Renderer r(&mainScreen);
 
 forward_list<GameObject*> gameObjects;
 
+void FixedUpdate();
+void GameInit();
+void Update();
+
 int main()
 { 
-    Transform t(10.0f,10.0f);
-    Renderer r(&mainScreen);
-    
     game.Addcomponent(&t);   
     game.Addcomponent(&r);
 
     gameObjects.push_front(&game);
     GameInit();
-    Debug::Instance().Log("Game started");
-    Debug::Instance().Log(t.position->ToString());
-    while (true)
-    {  
-        t.Translate(Vector2(1, 0), 0.01f);
 
-        GameLogic();
+    Debug::Instance().Log("Game started");
+    while (true)
+    {
+        mainLoop.FixedUpdate(FixedUpdate);
+        mainLoop.Update(Update);
     }
 
     return 0;
 }
+
 void GameInit()
 {
     mainScreen.Reset();
 }
-void GameLogic()
+
+void FixedUpdate()
 {
     mainScreen.Reset();
 
@@ -54,4 +56,16 @@ void GameLogic()
     }
 
     mainScreen.DisPlay();
+}
+
+void Update()
+{
+    if (Input::GetKeyDown(KeyCode::W))
+        t.Translate(Vector2(0, 1), 0.001f);
+    if (Input::GetKeyDown(KeyCode::S))
+        t.Translate(Vector2(0, -1), 0.001f);
+    if (Input::GetKeyDown(KeyCode::A))
+        t.Translate(Vector2(1, 0), 0.001f);
+    if (Input::GetKeyDown(KeyCode::D))
+        t.Translate(Vector2(-1, 0), 0.001f);
 }

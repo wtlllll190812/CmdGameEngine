@@ -25,6 +25,20 @@ void Debug::Log(string message)
 	file << message << endl;
 }
 
+void Debug::Log(char* message)
+{
+	ostringstream temp;
+	temp << message;
+	string s = temp.str();
+}
+
+void Debug::Log(int message)
+{
+	ostringstream temp;
+	temp << message;
+	string s = temp.str();
+}
+
 Debug& Debug::Instance()
 {
 	static Debug* instance = new Debug();

@@ -21,6 +21,15 @@ Vector2 Vector2::operator+(const Vector2 vector)
     return res;
 }
 
+Vector2 Vector2::operator-(const Vector2 vector)
+{
+    Vector2 res;
+    res.x = this->x - vector.x;
+    res.y = this->y - vector.y;
+
+    return res;
+}
+
 Vector2 Vector2::operator*(const float s)
 {
     Vector2 res;
