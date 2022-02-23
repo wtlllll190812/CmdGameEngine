@@ -3,7 +3,7 @@
 #include "Screen.h"
 #include "DebugLog.h"
 
-const PixelData FrameBuffer::PZero = { false,"#",0 };
+const PixelData FrameBuffer::pixelDefault = { false,"#",0 };
 
 FrameBuffer::FrameBuffer()
 {
@@ -17,7 +17,7 @@ void FrameBuffer::Draw(frameData d) //写入数据
     {
         for (int i = 0; i < SCREENSIZE_X; i++)
         {
-            nextData->data[i][j].ch = d.data[i][j].ch;
+            nextData->data[i][j].data = d.data[i][j].data;
             nextData->data[i][j].color = d.data[i][j].color;
         }
     }
@@ -35,16 +35,16 @@ void FrameBuffer::DataInit()
             {
                 nextData->data[i][j].changed = true;
             }
-            currentData->data[i][j] = PZero;
+            currentData->data[i][j] = pixelDefault;
         }
     }
 }
 
 void FrameBuffer::DrawPixel(int x, int y, string ch, int color)
 {
-    if (ch != nextData->data[x][y].ch || color != nextData->data[x][y].color)
+    if (ch != nextData->data[x][y].data || color != nextData->data[x][y].color)
     {
-        nextData->data[x][y].ch = ch;
+        nextData->data[x][y].data = ch;
         nextData->data[x][y].color = color;
         nextData->data[x][y].changed = true;
     }
@@ -87,7 +87,7 @@ void Screen::DisPlay(void)
             if (FB.currentData->data[i][j].changed)
             {
                 GoToPos(i, j);
-                ScreenPrint(FB.currentData->data[i][j].ch, FB.currentData->data[i][j].color);
+                ScreenPrint(FB.currentData->data[i][j].data, FB.currentData->data[i][j].color);
             }
         }
         ScreenPrint("\n",0);
@@ -117,7 +117,7 @@ void Screen::DrawPixel(int x, int y, string ch, int color)
 
 bool operator==(const PixelData& p1, const PixelData& p2)
 {
-    return p1.ch==p2.ch&&p1.color==p2.color;
+    return p1.data==p2.data&&p1.color==p2.color;
 }
 
 

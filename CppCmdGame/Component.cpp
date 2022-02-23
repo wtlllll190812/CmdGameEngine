@@ -41,7 +41,7 @@ void Renderer::OnUpdate()
 		tr = dynamic_cast<Transform*>(owner->GetComponent<Transform>()) ;
 	else
 	{
-		Graphic::DrawRect(s, (tr->position->x * 10 + 5) / 10, (tr->position->y * 10 + 5) / 10, 4, 5);
+		Graphic::DrawRect(s, Vector2((tr->position->x * 10 + 5) / 10, (tr->position->y * 10 + 5) / 10), 4, 5);
 	}
 	Debug::Instance().Log("Component 'Renderer' Updated");
 }
@@ -104,12 +104,8 @@ void RigitBody::OnRemove()
 
 void RigitBody::OnUpdate()
 {
-	v = v + force+Vector2(gravity,0);
-	tr->Translate(v,0.01f);
-}
-
-void Collider::AddForce(Vector2 force)
-{
+	velocity = velocity + force+Vector2(gravity,0);
+	tr->Translate(velocity,0.01f);
 }
 
 void Collider::OnAdd()

@@ -1,3 +1,7 @@
+/**
+* ECS系统组件库
+*/
+
 #ifndef _COMPONENT_H_
 #define _COMPONENT_H_
 
@@ -10,65 +14,89 @@ class GameObject;
 class Screen;
 class Transform;
 
-class Component
+class Component//ECS组件基类
 {
 public:   
     GameObject* owner;
 
     Component();
-    virtual void OnAdd();
-    virtual void OnRemove();
-    virtual void OnUpdate();
+    virtual void OnAdd();//组件添加时
+    virtual void OnRemove();//组件移除时
+    virtual void OnUpdate();//组件更新
 };
 
-class Renderer : public Component
+class Renderer : public Component//渲染器组件
 {
 public:
     Renderer(Screen *s);
+    //组件添加时
     void OnAdd();
+    //组件移除时
     void OnRemove();
+    //组件更新
     void OnUpdate();
 private:
-    Screen* s;
-    Transform* tr;
+    Screen* s;//屏幕指针
+    Transform* tr;//位置组件
 };
 
-class Transform : public Component
+class Transform : public Component//位置组件
 {
 public:
-    Vector2* position;
-    float* Angle;
+    Vector2* position;//世界坐标
+    float* Angle;//物体角度
+
     Transform();
     Transform(float,float);
+
+    /*
+    * @brief 位移方法
+    * 向指定方向以某个速度产生一段位移
+    * @param angle 移动方向
+    * @param speed 移动速度
+    */
     void Translate(Vector2 angle,float speed);
+    //组件添加时
     void OnAdd();
+    //组件移除时
     void OnRemove();
+    //组件更新
     void OnUpdate();
 };
 
-class RigitBody: Component
+class RigitBody:public Component
 {
 public:
     float gravity;
 
 
     RigitBody();
+
+    /*
+    * 向物体添加一个力
+    * @param force 力的向量
+    */
     void AddForce(Vector2 force);
+    //组件添加时
     void OnAdd();
+    //组件移除时
     void OnRemove();
+    //组件更新
     void OnUpdate();
 private:
-    Vector2 force;
-    Vector2 v;
-    Transform* tr;
+    Vector2 force;//当前力
+    Vector2 velocity;//当前速度
+    Transform* tr;//位置组件
 };
 
-class Collider :Component
+class Collider :public Component
 {
     Collider();
-    void AddForce(Vector2 force);
+    //组件添加时
     void OnAdd();
+    //组件移除时
     void OnRemove();
+    //组件更新
     void OnUpdate();
 };
 #endif

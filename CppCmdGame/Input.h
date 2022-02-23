@@ -1,5 +1,6 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
+
 #include <conio.h>
 #include <iostream>
 #include <format>
@@ -7,6 +8,9 @@
 
 using namespace std;
 
+/*
+* @brief 按键键位枚举
+*/
 enum class KeyCode
 {
 	BackSpace = 8,Tab
@@ -23,10 +27,23 @@ enum class KeyCode
 
 };
 
+/*
+* @brief 输入管理类
+*/
 class Input
 {
 public:
+
+	/*
+	* @brief 返回Input的单例
+	*/
 	static Input& Instance();
+
+	/*
+	* @brief 获取按键状态
+	* @return 按键是否按下
+	* @param 按键枚举
+	*/
 	bool static GetKeyDown(KeyCode k);
 };
 
