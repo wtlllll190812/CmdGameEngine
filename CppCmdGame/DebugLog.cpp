@@ -30,6 +30,7 @@ void Debug::Log(char* message)
 	ostringstream temp;
 	temp << message;
 	string s = temp.str();
+	file << s << endl;
 }
 
 void Debug::Log(int message)
@@ -37,6 +38,7 @@ void Debug::Log(int message)
 	ostringstream temp;
 	temp << message;
 	string s = temp.str();
+	file << s << endl;
 }
 
 Debug& Debug::Instance()

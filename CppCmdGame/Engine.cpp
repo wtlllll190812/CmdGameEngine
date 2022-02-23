@@ -39,6 +39,15 @@ Vector2 Vector2::operator*(const float s)
     return res;
 }
 
+Vector2 Vector2::operator/(const float s)
+{
+    Vector2 res;
+    res.x = this->x / s;
+    res.y = this->y / s;
+
+    return res;
+}
+
 string Vector2::ToString()
 {
     ostringstream temp;

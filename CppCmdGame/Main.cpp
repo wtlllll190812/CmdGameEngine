@@ -32,8 +32,11 @@ int main()
     GameInit();
 
     Debug::Instance().Log("Game started");
+
+    
     while (true)
-    {
+    {  
+        
         mainLoop.FixedUpdate(FixedUpdate);
         mainLoop.Update(Update);
     }
@@ -54,6 +57,9 @@ void FixedUpdate()
     {
         (*it)->Update();
     }
+
+    Vector2 test[4]{ Vector2(10,10),Vector2(10,20),Vector2(20,20),Vector2(20,10)};
+    Graphic::DrawPolygon(&mainScreen, test,4);
 
     mainScreen.DisPlay();
 }

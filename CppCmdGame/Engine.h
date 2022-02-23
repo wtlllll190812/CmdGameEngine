@@ -15,6 +15,7 @@ public:
 	Vector2 operator+(const Vector2);
 	Vector2 operator-(const Vector2);
 	Vector2 operator*(const float);
+	Vector2 operator/(const float);
 	string ToString();
 };
 #endif

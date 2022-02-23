@@ -81,3 +81,45 @@ void Transform::OnUpdate()
 {
 	Debug::Instance().Log("Component 'Transform' Updated");
 }
+
+RigitBody::RigitBody()
+{
+	gravity = 1;
+	tr = nullptr;
+}
+
+void RigitBody::AddForce(Vector2 _force)
+{
+	force =force+ _force;
+}
+
+void RigitBody::OnAdd()
+{
+	tr = dynamic_cast<Transform*>(owner->GetComponent<Transform>());
+}
+
+void RigitBody::OnRemove()
+{
+}
+
+void RigitBody::OnUpdate()
+{
+	v = v + force+Vector2(gravity,0);
+	tr->Translate(v,0.01f);
+}
+
+void Collider::AddForce(Vector2 force)
+{
+}
+
+void Collider::OnAdd()
+{
+}
+
+void Collider::OnRemove()
+{
+}
+
+void Collider::OnUpdate()
+{
+}

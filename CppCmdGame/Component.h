@@ -45,4 +45,30 @@ public:
     void OnRemove();
     void OnUpdate();
 };
+
+class RigitBody: Component
+{
+public:
+    float gravity;
+
+
+    RigitBody();
+    void AddForce(Vector2 force);
+    void OnAdd();
+    void OnRemove();
+    void OnUpdate();
+private:
+    Vector2 force;
+    Vector2 v;
+    Transform* tr;
+};
+
+class Collider :Component
+{
+    Collider();
+    void AddForce(Vector2 force);
+    void OnAdd();
+    void OnRemove();
+    void OnUpdate();
+};
 #endif
