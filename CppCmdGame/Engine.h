@@ -27,4 +27,11 @@ public:
 	//×ª»»Îª×Ö·û´®
 	string ToString();
 };
+
+class Time
+{
+public:
+	static float time;
+	static float deltaTime;
+};
 #endif

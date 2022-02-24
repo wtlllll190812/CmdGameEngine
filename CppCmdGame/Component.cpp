@@ -84,13 +84,19 @@ void Transform::OnUpdate()
 
 RigitBody::RigitBody()
 {
-	gravity = 1;
+	gravity = 4.9;
+	mass = 1;
 	tr = nullptr;
 }
 
-void RigitBody::AddForce(Vector2 _force)
+void RigitBody::AddForce(Vector2 _force,forceMode mode)
 {
-	force =force+ _force;
+	if(mode==forceMode::force)
+		force =force+ _force;
+	else
+	{
+		forceFrame = forceFrame + _force;
+	}
 }
 
 void RigitBody::OnAdd()
@@ -104,8 +110,11 @@ void RigitBody::OnRemove()
 
 void RigitBody::OnUpdate()
 {
-	velocity = velocity + force+Vector2(gravity,0);
-	tr->Translate(velocity,0.01f);
+	Vector2 a = (force +forceFrame+ Vector2(0, gravity))/ mass;
+	velocity = velocity + a * Time::deltaTime / 1000;
+
+	tr->Translate(velocity, -Time::deltaTime / 1000);
+	forceFrame = Vector2(0,0);
 }
 
 void Collider::OnAdd()

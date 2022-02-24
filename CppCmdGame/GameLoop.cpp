@@ -3,11 +3,13 @@
 
 void GameLoop::Update(void (*f)(void))
 {
+    Time::time = GetTickCount64();
     (*f)();
 }
 void GameLoop::FixedUpdate(void (*f)(void))
 {
-    if (GetTickCount64() - lastFrame > 1000 / frame)
+    Time::deltaTime = GetTickCount64() - lastFrame;
+    if (Time::deltaTime > 1000 / frame)
     {
         lastFrame = GetTickCount64();
         (*f)();

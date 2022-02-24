@@ -1,0 +1,233 @@
+Component 'Transform' Added
+Component 'Renderer' Added
+Game started
+v
+0.062
+Move to9.389.98116
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to8.759.94258
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.359
+Move to5.169.09117
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to4.538.92231
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to3.918.7373
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to3.288.52985
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to2.668.30686
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to2.038.06083
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to1.417.79987
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to0.787.51525
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to0.167.21631
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-0.476.8931
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-1.096.55618
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-1.726.19439
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-2.345.8195
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-2.975.41911
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-3.595.00625
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-4.224.56728
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-4.844.11644
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-5.473.63888
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-6.093.15006
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-6.722.63392
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-7.342.10713
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-7.971.5524
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-8.590.987631
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-9.220.39431
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-9.84-0.208429
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-10.47-0.840338
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-11.09-1.48105
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-11.72-2.15155
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-12.34-2.83024
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-12.97-3.53932
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-13.59-4.25599
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-14.22-5.00366
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-14.84-5.7583
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-15.47-6.54455
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-16.09-7.33717
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-16.72-8.16201
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-17.34-8.9926
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-17.97-9.85604
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-18.59-10.7246
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-19.22-11.6266
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-19.84-12.5332
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-20.47-13.4738
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.062
+Move to-21.09-14.4183
+Component 'Renderer' Updated
+Component 'Transform' Updated
+v
+0.063
+Move to-21.72-15.3975
+Component 'Renderer' Updated
+Component 'Transform' Updated

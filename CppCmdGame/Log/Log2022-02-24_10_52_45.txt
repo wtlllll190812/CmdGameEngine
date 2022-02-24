@@ -1,0 +1,45 @@
+Component 'Transform' Added
+Component 'Renderer' Added
+Game started
+Move to10.6310.0194
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to11.2510.0574
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to16.4111.6781
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to17.0311.8917
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to17.6612.1282
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to18.2812.3797
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to18.9112.6548
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to19.5312.9443
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to20.1613.2579
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to20.7813.5854
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to21.4113.9376
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to22.0314.3031
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to22.6614.6939
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Move to23.2815.0974
+Component 'Renderer' Updated
+Component 'Transform' Updated

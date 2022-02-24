@@ -16,6 +16,8 @@ GameLoop mainLoop(20);
 GameObject game;
 Transform t(10.0f,10.0f);
 Renderer r(&mainScreen);
+RigitBody ri;
+//Collider col;
 
 forward_list<GameObject*> gameObjects;
 
@@ -27,16 +29,18 @@ int main()
 { 
     game.Addcomponent(&t);   
     game.Addcomponent(&r);
+    game.Addcomponent(&ri);
+    //game.Addcomponent(&col);
 
     gameObjects.push_front(&game);
     GameInit();
 
     Debug::Instance().Log("Game started");
 
-    
+    ri.velocity = Vector2(10,0);
+    ri.gravity = 0;
     while (true)
     {  
-        
         mainLoop.FixedUpdate(FixedUpdate);
         mainLoop.Update(Update);
     }
@@ -52,14 +56,11 @@ void GameInit()
 void FixedUpdate()
 {
     mainScreen.Reset();
-
+    
     for (auto it = gameObjects.begin(); it != gameObjects.end(); it++)
     {
         (*it)->Update();
     }
-
-    Vector2 test[4]{ Vector2(10,10),Vector2(10,20),Vector2(20,20),Vector2(20,10)};
-    Graphic::DrawPolygon(&mainScreen, test,4);
 
     mainScreen.DisPlay();
 }
@@ -67,7 +68,7 @@ void FixedUpdate()
 void Update()
 {
     if (Input::GetKeyDown(KeyCode::W))
-        t.Translate(Vector2(0, 1), 0.001f);
+        ri.AddForce(Vector2(0,0.1f),forceMode::impules);
     if (Input::GetKeyDown(KeyCode::S))
         t.Translate(Vector2(0, -1), 0.001f);
     if (Input::GetKeyDown(KeyCode::A))

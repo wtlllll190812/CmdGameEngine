@@ -42,7 +42,7 @@ public:
 	* @brief 写入日志文件
 	* @param message 写入的内容
 	*/
-	void Log(int message);
+	void Log(float message);
 
 	/*
 	* @brief 获取Debug类的单例

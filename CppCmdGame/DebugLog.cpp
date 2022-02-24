@@ -33,7 +33,7 @@ void Debug::Log(char* message)
 	file << s << endl;
 }
 
-void Debug::Log(int message)
+void Debug::Log(float message)
 {
 	ostringstream temp;
 	temp << message;

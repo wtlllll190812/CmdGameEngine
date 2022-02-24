@@ -2,6 +2,7 @@
 #define GAMELOOP_H_
 #include <windows.h>
 
+#include "Engine.h"
 /*
 * 游戏引擎生命周期控制
 */

@@ -1,0 +1,3 @@
+Component 'Transform' Added
+Component 'Renderer' Added
+Game started

@@ -1,4 +1,4 @@
-/**
+/*
 * ECS系统组件库
 */
 
@@ -13,6 +13,12 @@
 class GameObject;
 class Screen;
 class Transform;
+
+enum class forceMode
+{
+    impules
+    , force
+};
 
 class Component//ECS组件基类
 {
@@ -67,8 +73,9 @@ public:
 class RigitBody:public Component
 {
 public:
-    float gravity;
-
+    float gravity;//重力加速度
+    float mass;//物体重量
+    Vector2 velocity;//当前速度
 
     RigitBody();
 
@@ -76,16 +83,18 @@ public:
     * 向物体添加一个力
     * @param force 力的向量
     */
-    void AddForce(Vector2 force);
+    void AddForce(Vector2 ,forceMode);
     //组件添加时
     void OnAdd();
     //组件移除时
     void OnRemove();
     //组件更新
     void OnUpdate();
+
 private:
     Vector2 force;//当前力
-    Vector2 velocity;//当前速度
+    Vector2 forceFrame;//添加力，仅作用于本帧
+
     Transform* tr;//位置组件
 };
 

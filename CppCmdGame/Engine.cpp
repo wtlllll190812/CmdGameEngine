@@ -56,3 +56,6 @@ string Vector2::ToString()
     string s = temp.str();
     return s;
 }
+
+float Time::deltaTime = 0;
+float Time::time = 0;
