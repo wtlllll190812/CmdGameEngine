@@ -98,14 +98,15 @@ void Transform::OnUpdate()
 
 
 
-RigitBody::RigitBody()
+RigidBody::RigidBody()
 {
 	gravity = 4.9;
 	mass = 1;
 	tr = nullptr;
 	col = nullptr;
+	drag = 0.1f;
 }
-void RigitBody::AddForce(Vector2 _force,forceMode mode)
+void RigidBody::AddForce(Vector2 _force,forceMode mode)
 {
 	if(mode==forceMode::force)
 		force =force+ _force;
@@ -114,25 +115,33 @@ void RigitBody::AddForce(Vector2 _force,forceMode mode)
 		forceFrame = forceFrame + _force;
 	}
 }
-void RigitBody::OnAdd()
+void RigidBody::OnAdd()
 {
 	Debug::Instance().Log("Component 'RigitBody' Added");
 	tr = dynamic_cast<Transform*>(owner->GetComponent<Transform>());
 }
-void RigitBody::OnRemove()
+void RigidBody::OnRemove()
 {
 	Debug::Instance().Log("Component 'RigitBody' Removed");
 }
-void RigitBody::OnUpdate()
+void RigidBody::OnUpdate()
 {
 	Debug::Instance().Log("Component 'RigitBody' Updated");
-	Vector2 a = (force +forceFrame+ Vector2(0, gravity))/ mass;
+	//计算加速度
+	Vector2 dragForce;
+	if(velocity.Magnitude()>0)
+		dragForce = -velocity.Normalize() * pow(velocity.Magnitude(), 2) * drag;
+	Vector2 a = (force +forceFrame+ Vector2(0, gravity)+ dragForce)/ mass;
+
+	Debug::Instance().Log("a: ");
+
+	Debug::Instance().Log(velocity.Magnitude());
+	//计算速度
 	velocity = velocity + a * Time::deltaTime / 1000;
 
+	//移动物体
 	tr->Translate(velocity, -Time::deltaTime / 1000);
-	forceFrame = Vector2(0,0);
-	
-	col = dynamic_cast<Collider*>(owner->GetComponent<Collider>());
+	forceFrame = Vector2(0,0);	
 }
 float minOrMax(Vector2 *v,int size,bool isMax,bool isAxisY)
 {
@@ -144,7 +153,7 @@ float minOrMax(Vector2 *v,int size,bool isMax,bool isAxisY)
 	}
 	return isAxisY? res.y:res.x;
 }
-Vector2 RigitBody::SAT(Collider* col2)
+Vector2 RigidBody::SAT(Collider* col2)
 {		
 	Vector2 res(0,0);
 

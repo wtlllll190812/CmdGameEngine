@@ -91,14 +91,15 @@ public:
     void OnUpdate();
 };
 
-class RigitBody:public Component
+class RigidBody:public Component
 {
 public:
     float gravity;//重力加速度
     float mass;//物体重量
     Vector2 velocity;//当前速度
+    float drag;//阻力
 
-    RigitBody();
+    RigidBody();
 
     /*
     * 向物体添加一个力

@@ -24,17 +24,18 @@ Vector2 Vector2::operator+(const Vector2 vector)
 Vector2 Vector2::operator-(const Vector2 vector)
 {
     Vector2 res;
-    res.x = this->x - vector.x;
-    res.y = this->y - vector.y;
+    res.x = x - vector.x;
+    res.y = y - vector.y;
 
     return res;
 }
 
 Vector2 Vector2::operator-()
 {
-    this->x = -this->x;
-    this->y = -this->y;
-    return Vector2();
+    Vector2 res;
+    res.x = -x;
+    res.y = -y;
+    return res;
 }
 
 Vector2 Vector2::operator*(const float s)
@@ -57,14 +58,22 @@ Vector2 Vector2::operator/(const float s)
 
 float Vector2::Magnitude()
 {
-    return sqrt(pow(this->x, 2) + pow(this->y, 2));
+    return sqrt(pow(x, 2) + pow(y, 2));
+}
+
+Vector2 Vector2::Normalize()
+{
+    Vector2 res;
+    res.x =x/ Magnitude();
+    res.y =y/ Magnitude();
+    return res;
 }
 
 string Vector2::ToString()
 {
     ostringstream temp;
-    temp << x;
-    temp << y;
+    temp << "x: "<<x<<" ";
+    temp << "y: "<<y;
     string s = temp.str();
     return s;
 }

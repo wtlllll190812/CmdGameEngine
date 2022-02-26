@@ -90,7 +90,6 @@ void Screen::DisPlay(void)
                 ScreenPrint(FB.currentData->data[i][j].data, FB.currentData->data[i][j].color);
             }
         }
-        ScreenPrint("\n",0);
     }
 }
 
@@ -108,7 +107,7 @@ void Screen::GoToPos(short x, short y)
 
 void Screen::DrawPixel(int x, int y, string ch, int color)
 {
-    if (x > SCREENSIZE_X || y > SCREENSIZE_Y || x < 0 || y < 0)
+    if (x >= SCREENSIZE_X || y >= SCREENSIZE_Y || x < 0 || y < 0)
     {
         return;
     }

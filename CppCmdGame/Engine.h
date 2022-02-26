@@ -27,6 +27,7 @@ public:
 	Vector2 operator*(const float);
 	Vector2 operator/(const float);
 	float Magnitude();
+	Vector2 Normalize();
 	//×ª»»Îª×Ö·û´®
 	string ToString();
 };

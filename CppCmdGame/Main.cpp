@@ -11,15 +11,19 @@ using namespace std;
 #include "DebugLog.h"
 #include "Input.h"
 
+
+#define FRAMERATE 20
+
+
 Vector2 vertex[4]{ Vector2(10,10),Vector2(20,10),Vector2(20,20),Vector2(10,20) };
 
 Screen mainScreen;
-GameLoop mainLoop(20);
+GameLoop mainLoop(FRAMERATE);
 GameObject game;
 
 Transform t(20.0f,0);
 Renderer r(&mainScreen, vertex, 4);
-RigitBody ri;
+RigidBody ri;
 Collider col1(vertex, 4);
 
 GameObject game2;
@@ -32,7 +36,7 @@ forward_list<GameObject*> gameObjects;
 void FixedUpdate();
 void GameInit();
 void Update();
-void Physics(RigitBody* Rb);
+void Physics(RigidBody* Rb);
 
 int main()
 { 
@@ -48,6 +52,8 @@ int main()
     gameObjects.push_front(&game);
     gameObjects.push_front(&game2);
     GameInit();
+
+    
 
     Debug::Instance().Log("Game started");
 
@@ -71,7 +77,7 @@ void FixedUpdate()
     
     for (auto it = gameObjects.begin(); it != gameObjects.end(); it++)
     {
-        Physics(dynamic_cast<RigitBody*>((*it)->GetComponent<RigitBody>()));
+        Physics(dynamic_cast<RigidBody*>((*it)->GetComponent<RigidBody>()));
         (*it)->Update();
     }
 
@@ -92,7 +98,7 @@ void Update()
         t.Translate(Vector2(-1, 0), 0.001f);
 }
 
-void Physics(RigitBody* Rb)
+void Physics(RigidBody* Rb)
 {
     if (!Rb)return;
 
@@ -105,10 +111,11 @@ void Physics(RigitBody* Rb)
         {
             Vector2 res = Rb->SAT(col);
             Renderer* r = dynamic_cast<Renderer*>(Rb->owner->GetComponent<Renderer>());
-            Debug::Instance().Log(res.ToString());
+            Debug::Instance().Log(res.y);
             if (res.x<0&&res.y<0)
             {
-                Rb->AddForce(-Rb->velocity*(res.Magnitude()), forceMode::impules);
+                res.x = 0;
+                Rb->AddForce((-Rb->velocity + res*FRAMERATE) * FRAMERATE/2, forceMode::impules);
                 r->pixelData = PixelData{ false," ",226 };
             }
             else
