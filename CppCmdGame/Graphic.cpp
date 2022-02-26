@@ -17,7 +17,7 @@ void Graphic::DrawCircle(Screen* s, Vector2 pos, int R)
     
 }
 
-void Graphic::DrawPolygon(Screen* s,Vector2 vertex[],int size)
+void Graphic::DrawPolygon(Screen* s,PixelData pd,Vector2 vertex[],int size)
 {
     Vector2 mid;
 
@@ -30,11 +30,11 @@ void Graphic::DrawPolygon(Screen* s,Vector2 vertex[],int size)
     {
         Vector2 vertexP[3]{ vertex[i],i!=size-1?vertex[i + 1]:vertex[0],mid};
         
-        DrawTriAngle(s,vertexP);
+        DrawTriAngle(s,pd,vertexP);
     }
 }
 
-void Graphic::DrawTriAngle(Screen* s, Vector2 vertex[3])
+void Graphic::DrawTriAngle(Screen* s, PixelData pd, Vector2 vertex[3])
 {
     for (int i = 0; i < 3; i++)
     {
@@ -52,11 +52,11 @@ void Graphic::DrawTriAngle(Screen* s, Vector2 vertex[3])
     
     if (vertex[0].y == vertex[1].y)
     {
-        DrawBottomTriAngle(s,vertex);
+        DrawBottomTriAngle(s,pd,vertex);
     }
     else if (vertex[1].y==vertex[2].y)
     {      
-        DrawTopTriAngle(s, vertex);
+        DrawTopTriAngle(s, pd,vertex);
     }
     else
     {
@@ -64,13 +64,13 @@ void Graphic::DrawTriAngle(Screen* s, Vector2 vertex[3])
         Vector2 mid (midX,vertex[1].y);
 
         Vector2 top[3]{ vertex[0], vertex[1], mid };
-        DrawTopTriAngle(s, top); 
+        DrawTopTriAngle(s,pd, top); 
         Vector2 bottom[3]{ vertex[1], mid, vertex[2] };
-        DrawBottomTriAngle(s, bottom);
+        DrawBottomTriAngle(s,pd, bottom);
     }
 }
 
-void Graphic::DrawTopTriAngle(Screen* s, Vector2 vertex[3])
+void Graphic::DrawTopTriAngle(Screen* s, PixelData pd, Vector2 vertex[3])
 {
     bool dir=(vertex[1].x < vertex[2].x);
 
@@ -91,14 +91,14 @@ void Graphic::DrawTopTriAngle(Screen* s, Vector2 vertex[3])
     {
         for (int scanlineX = (int)startX; scanlineX <= (int)endX; scanlineX++)
         {
-            s->DrawPixel(scanlineX, scanLineY, "#", 15);
+            s->DrawPixel(scanlineX, scanLineY, pd.data, pd.color);
         }
         startX += p1;
         endX += p2;
     }
 }
 
-void Graphic::DrawBottomTriAngle(Screen* s, Vector2 vertex[3])
+void Graphic::DrawBottomTriAngle(Screen* s, PixelData pd, Vector2 vertex[3])
 {
     bool dir = (vertex[1].x < vertex[0].x);
 
@@ -119,7 +119,7 @@ void Graphic::DrawBottomTriAngle(Screen* s, Vector2 vertex[3])
     {
         for (int scanlineX = (int)startX; scanlineX <= (int)endX; scanlineX++)
         {
-            s->DrawPixel(scanlineX, scanLineY, "#", 15);
+            s->DrawPixel(scanlineX, scanLineY,pd.data,pd.color);
         }
         startX -= p1;
         endX -= p2;

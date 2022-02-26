@@ -13,6 +13,8 @@
 class GameObject;
 class Screen;
 class Transform;
+class Collider;
+class Vector2;
 
 enum class forceMode
 {
@@ -34,7 +36,10 @@ public:
 class Renderer : public Component//渲染器组件
 {
 public:
-    Renderer(Screen *s);
+    Vector2* vertex;
+    PixelData pixelData{false,"#",15};
+
+    Renderer(Screen* ,Vector2* ,int);
     //组件添加时
     void OnAdd();
     //组件移除时
@@ -42,6 +47,7 @@ public:
     //组件更新
     void OnUpdate();
 private:
+    int vertexNumber;//边的数量
     Screen* s;//屏幕指针
     Transform* tr;//位置组件
 };
@@ -62,6 +68,21 @@ public:
     * @param speed 移动速度
     */
     void Translate(Vector2 angle,float speed);
+   
+    /*
+    * @brief 局部坐标转世界坐标
+    * @param ori 初始坐标
+    * @return 世界坐标
+    */
+    Vector2 ObjectToWorld(Vector2 ori);
+    
+    /*
+    * @brief 局部坐标数组转世界坐标数组
+    * @param ori 初始坐标数组
+    * @param size 数组大小 
+    * @return 世界坐标
+    */
+    Vector2* ObjectToWorld(Vector2* ori,int size);
     //组件添加时
     void OnAdd();
     //组件移除时
@@ -90,17 +111,24 @@ public:
     void OnRemove();
     //组件更新
     void OnUpdate();
-
+    //SAT碰撞检测算法
+    Vector2 SAT(Collider*);
 private:
     Vector2 force;//当前力
     Vector2 forceFrame;//添加力，仅作用于本帧
 
+    Collider* col;//碰撞体
     Transform* tr;//位置组件
 };
 
 class Collider :public Component
 {
-    Collider();
+public:
+    Vector2* vertex;
+    int vertexNumber;
+    Transform* tr;
+
+    Collider(Vector2[],int);
     //组件添加时
     void OnAdd();
     //组件移除时

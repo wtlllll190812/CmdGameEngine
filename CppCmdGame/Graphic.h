@@ -34,16 +34,17 @@ public:
     * @param s 要绘制的Screen对象
     * @param vertex 顶点集合
     */
-    static void DrawTriAngle(Screen* s, Vector2[3]);
+    static void DrawTriAngle(Screen* s, PixelData pd, Vector2[3]);
 
     /*
     * @brief 画一个多边形
     * 绘制多边形，目前只支持凸多边形
     * @param s 要绘制的Screen对象
+    * @param pos 绘制坐标
     * @param vertex 顶点集合
     * @param size 顶点数量
     */
-    static void DrawPolygon(Screen* s, Vector2[],int size);
+    static void DrawPolygon(Screen* s, PixelData pd, Vector2[],int size);
 private:
 
     /*
@@ -51,14 +52,14 @@ private:
     * @param s 要绘制的Screen对象
     * @param vertex 顶点集合
     */
-    static void DrawTopTriAngle(Screen* s, Vector2[3]);
+    static void DrawTopTriAngle(Screen* s, PixelData pd, Vector2[3]);
 
     /*
     * @brief 绘制三角下半部分
     * @param s 要绘制的Screen对象
     * @param vertex 顶点集合
     */
-    static void DrawBottomTriAngle(Screen* s, Vector2[3]);
+    static void DrawBottomTriAngle(Screen* s, PixelData pd, Vector2[3]);
 };
 
 #endif

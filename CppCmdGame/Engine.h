@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include<sstream>
+#include<cmath>
 using namespace std;
 
 
@@ -22,8 +23,10 @@ public:
 	//运算符重载
 	Vector2 operator+(const Vector2);
 	Vector2 operator-(const Vector2);
+	Vector2 operator-();
 	Vector2 operator*(const float);
 	Vector2 operator/(const float);
+	float Magnitude();
 	//转换为字符串
 	string ToString();
 };
