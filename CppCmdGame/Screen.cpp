@@ -3,7 +3,7 @@
 #include "Screen.h"
 #include "DebugLog.h"
 
-const PixelData FrameBuffer::pixelDefault = { false,"#",0 };
+const PixelData FrameBuffer::pixelDefault = {false, "#", 0};
 
 FrameBuffer::FrameBuffer()
 {
@@ -83,7 +83,7 @@ void Screen::DisPlay(void)
     for (int j = 0; j < SCREENSIZE_Y; j++)
     {
         for (int i = 0; i < SCREENSIZE_X; i++)
-        {          
+        {
             if (FB.currentData->data[i][j].changed)
             {
                 GoToPos(i, j);
@@ -114,9 +114,7 @@ void Screen::DrawPixel(int x, int y, string ch, int color)
     FB.DrawPixel(x, y, ch, color);
 }
 
-bool operator==(const PixelData& p1, const PixelData& p2)
+bool operator==(const PixelData &p1, const PixelData &p2)
 {
-    return p1.data==p2.data&&p1.color==p2.color;
+    return p1.data == p2.data && p1.color == p2.color;
 }
-
-

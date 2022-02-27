@@ -1,6 +1,5 @@
 #include "GameObject.h"
 
-
 GameObject::GameObject()
 {
 }
@@ -13,7 +12,7 @@ void GameObject::Update()
     }
 }
 
-void GameObject::Addcomponent(Component* component)
+void GameObject::Addcomponent(Component *component)
 {
     components.push_front(component);
     component->owner = this;

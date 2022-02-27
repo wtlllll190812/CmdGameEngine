@@ -1,5 +1,8 @@
 #include "Engine.h"
 
+ 
+Vector2 Vector2::zero = Vector2();
+
 Vector2::Vector2()
 {
     x = 0;
@@ -23,7 +26,7 @@ Vector2 Vector2::operator+(const Vector2 vector)
     Vector2 res;
     res.x = this->x + vector.x;
     res.y = this->y + vector.y;
-    
+
     return res;
 }
 
@@ -62,14 +65,14 @@ Vector2 Vector2::operator/(const float s)
     return res;
 }
 
-bool Vector2::operator==(const Vector2& v)
+bool Vector2::operator==(const Vector2 &v)
 {
     return x == v.x && y == v.y;
 }
 
 Vector2::operator Vector3()
 {
-    return Vector3(x,y,0);
+    return Vector3(x, y, 0);
 }
 
 float Vector2::Magnitude()
@@ -96,20 +99,26 @@ Vector3 Vector2::Cross(Vector2 v)
 Vector2 Vector2::Normalize()
 {
     Vector2 res;
-    res.x =x/ Magnitude();
-    res.y =y/ Magnitude();
+    res.x = x / Magnitude();
+    res.y = y / Magnitude();
     return res;
+}
+
+float Vector2::Distance(Vector2 v[2])
+{
+    Vector2 v1 = v[1] - v[0];
+    Vector2 v2 = (*this) - v[1];
+    return v1.Cross(v2).Magnitude() / v1.Magnitude();
 }
 
 string Vector2::ToString()
 {
     ostringstream temp;
-    temp << "x: "<<x<<" ";
-    temp << "y: "<<y;
+    temp << "x: " << x << " ";
+    temp << "y: " << y;
     string s = temp.str();
     return s;
 }
-
 
 Vector3::Vector3()
 {
@@ -174,14 +183,14 @@ Vector3 Vector3::operator/(const float s)
     return res;
 }
 
-bool Vector3::operator==(const Vector3& v)
+bool Vector3::operator==(const Vector3 &v)
 {
-    return x==v.x&&y==v.y&&z==v.z;
+    return x == v.x && y == v.y && z == v.z;
 }
 
 float Vector3::Magnitude()
 {
-    return sqrt(pow(x, 2) + pow(y, 2) + pow(z,2));
+    return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
 }
 
 float Vector3::Dot(Vector3 v)
@@ -211,6 +220,13 @@ Vector3 Vector3::Normalize()
     return res;
 }
 
+float Vector3::Distance(Vector3 v[2])
+{
+    Vector3 v1 = v[1] - v[0];
+    Vector3 v2 = (*this) - v[1];
+    return v1.Cross(v2).Magnitude() / v1.Magnitude();
+}
+
 string Vector3::ToString()
 {
     ostringstream temp;
@@ -221,8 +237,5 @@ string Vector3::ToString()
     return s;
 }
 
-
 float Time::deltaTime = 0;
 float Time::time = 0;
-
-
