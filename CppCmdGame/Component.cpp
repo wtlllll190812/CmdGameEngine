@@ -200,7 +200,8 @@ bool RigidBody::GJK(Collider* col2)
 	//求第一个支点
 	simplex.push_back(Support(d, c1, col->vertexNumber) - Support(-d, c2, col2->vertexNumber));
 
-	//方向改为反方向
+
+	//改为初始点反方向
 	d = -simplex.front();
 	//开始迭代
 	while (1)
@@ -243,22 +244,15 @@ bool RigidBody::HandlerSimplex(Vector2& dir, vector<Vector2>& simplex)
 		//计算AB，AC法向量
 		Vector3 ABperp = AC.Cross(AB).Cross(AB).Normalize();
 		Vector3 ACperp = AB.Cross(AC).Cross(AC).Normalize();
-
-		Debug::Instance().Log(ABperp.Dot(AO));
-		Debug::Instance().Log(ACperp.Dot(AO));
-
-
 		//判断原点位置
 		if (ABperp.Dot(AO) > 0)
 		{			
-
 			simplex.erase(simplex.begin()+1);
 			dir = (Vector2)ABperp;
 			return false;
 		}
 		else if (ACperp.Dot(AO) > 0)
 		{
-
 			simplex.erase(simplex.begin());
 			dir = (Vector2)ACperp;
 			return false;
@@ -270,7 +264,7 @@ bool RigidBody::HandlerSimplex(Vector2& dir, vector<Vector2>& simplex)
 Vector2 RigidBody::Support(Vector2 dir, Vector2* vertex, int size)
 {
 	Vector2 res;
-	int max=0;
+	int max=1 << 31;
 
 	for (int i = 0; i < size; i++)
 	{
