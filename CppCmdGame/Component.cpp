@@ -2,7 +2,6 @@
 #include "DebugLog.h"
 
 #include<iostream>
-using namespace std;
 
 
 Component::Component()
@@ -187,7 +186,105 @@ Vector2 RigidBody::SAT(Collider* col2)
 	}
 	return res;
 }
+bool RigidBody::GJK(Collider* col2)
+{
+	if (!col)
+		col = dynamic_cast<Collider*>(owner->GetComponent<Collider>());
+	//转换为世界坐标
+	Vector2* c1 = tr->ObjectToWorld(col->vertex, col->vertexNumber);
+	Vector2* c2 = col2->tr->ObjectToWorld(col2->vertex, col2->vertexNumber);
+	//单纯形
+	vector<Vector2> simplex;
+	//求出初始方向
+	Vector2 d = ((*col2->tr->position)-(*tr->position)).Normalize();
+	//求第一个支点
+	simplex.push_back(Support(d, c1, col->vertexNumber) - Support(-d, c2, col2->vertexNumber));
 
+	//方向改为反方向
+	d = -simplex.front();
+	//开始迭代
+	while (1)
+	{
+		Vector2 A = Support(d, c1, col->vertexNumber) - Support(-d, c2, col2->vertexNumber);
+		//若新的点不穿过原点
+		if (A.Dot(d) < 0)
+		{
+			return false;
+		}
+
+		simplex.push_back(A);
+
+		if (HandlerSimplex(d,simplex))
+		{
+			return true;
+		}
+	}
+}
+
+bool RigidBody::HandlerSimplex(Vector2& dir, vector<Vector2>& simplex)
+{
+	if (simplex.size() == 2)//当只有一条线时
+	{
+		//计算向量AO，AB
+		Vector2 AO = -simplex.back();
+		Vector2 AB = simplex.front() - simplex.back();
+		//计算AO的法向量
+		Vector3 ABperp = AB.Cross(AO).Cross(AB);
+		//将该向量定为新的方向
+		dir = (Vector2)ABperp.Normalize();
+		return false;
+	}
+	else
+	{
+		//计算需要的向量
+		Vector2 AO = - simplex.back();
+		Vector2 AB = simplex.front() - simplex.back();
+		Vector2 AC = *(simplex.begin()+1) - simplex.back();
+		//计算AB，AC法向量
+		Vector3 ABperp = AC.Cross(AB).Cross(AB).Normalize();
+		Vector3 ACperp = AB.Cross(AC).Cross(AC).Normalize();
+
+		Debug::Instance().Log(ABperp.Dot(AO));
+		Debug::Instance().Log(ACperp.Dot(AO));
+
+
+		//判断原点位置
+		if (ABperp.Dot(AO) > 0)
+		{			
+
+			simplex.erase(simplex.begin()+1);
+			dir = (Vector2)ABperp;
+			return false;
+		}
+		else if (ACperp.Dot(AO) > 0)
+		{
+
+			simplex.erase(simplex.begin());
+			dir = (Vector2)ACperp;
+			return false;
+		}
+
+		return true;
+	}
+}
+Vector2 RigidBody::Support(Vector2 dir, Vector2* vertex, int size)
+{
+	Vector2 res;
+	int max=0;
+
+	for (int i = 0; i < size; i++)
+	{
+		int d = dir.Dot(vertex[i]);
+		if (d > max)
+		{
+			max = d;
+			res = vertex[i];
+		}
+	}
+
+
+	return res;
+}
 
 
 Collider::Collider(Vector2 data[],int size)

@@ -4,11 +4,15 @@
 
 #ifndef _COMPONENT_H_
 #define _COMPONENT_H_
+#include<vector>
 
 #include "GameObject.h"
 #include "Graphic.h"
 #include "Screen.h"
 #include "Engine.h"
+
+using namespace std;
+
 
 class GameObject;
 class Screen;
@@ -114,12 +118,28 @@ public:
     void OnUpdate();
     //SAT碰撞检测算法
     Vector2 SAT(Collider*);
+    //GJK碰撞检测算法
+    bool GJK(Collider*);
 private:
     Vector2 force;//当前力
     Vector2 forceFrame;//添加力，仅作用于本帧
 
     Collider* col;//碰撞体
     Transform* tr;//位置组件
+
+    /*
+    * 计算给定图形某方向最远点
+    * @param dir 方向
+    * @param vertex 多边形顶点
+    * @param size 多边形顶点数量
+    */
+    Vector2 Support(Vector2 dir,Vector2* vertex,int size);
+    /*
+    * 处理单纯形
+    * @param dir 方向
+    * @param vertex 多边形顶点
+    */
+    bool HandlerSimplex(Vector2& dir, vector<Vector2>& vertex);
 };
 
 class Collider :public Component

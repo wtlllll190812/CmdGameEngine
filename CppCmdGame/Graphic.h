@@ -28,7 +28,15 @@ public:
     * @param h 矩形高度
     */
     static void DrawRect(Screen *s, Vector2 pos, int w, int h);
-
+   
+    /*
+    * @brief 画一条线
+    * @param s 要绘制的Screen对象
+    * @param startPos 起点
+    * @param endPos 终点
+    */
+    static void DrawLine(Vector2 startPos, Vector2 endPos);
+    
     /*
     * @brief 画一个三角
     * @param s 要绘制的Screen对象

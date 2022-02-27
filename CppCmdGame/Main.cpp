@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <forward_list>
+#include <vector>
 using namespace std;
 
 #include "Screen.h"
@@ -15,13 +16,13 @@ using namespace std;
 #define FRAMERATE 20
 
 
-Vector2 vertex[4]{ Vector2(10,10),Vector2(20,10),Vector2(20,20),Vector2(10,20) };
+Vector2 vertex[4]{ Vector2(-10,-2),Vector2(10,-2),Vector2(10,2),Vector2(-10,2) };
 
 Screen mainScreen;
 GameLoop mainLoop(FRAMERATE);
 GameObject game;
 
-Transform t(20.0f,0);
+Transform t(20.0f,5);
 Renderer r(&mainScreen, vertex, 4);
 RigidBody ri;
 Collider col1(vertex, 4);
@@ -37,6 +38,38 @@ void FixedUpdate();
 void GameInit();
 void Update();
 void Physics(RigidBody* Rb);
+
+
+bool temp(vector<Vector2>& simplex)
+{
+    //计算需要的向量
+    Vector2 AO = -simplex.back();
+    Vector2 AB = simplex.front() - simplex.back();
+    Vector2 AC = *(simplex.begin() + 1) - simplex.back();
+    //计算AB，AC法向量
+    Vector3 ABperp = AC.Cross(AB).Cross(AB).Normalize();
+    Vector3 ACperp = AB.Cross(AC).Cross(AC).Normalize();
+
+    cout << ABperp.ToString() << endl;
+    cout << ACperp.ToString() << endl;
+    cout << ABperp.Dot(AO) << endl;
+    cout << ACperp.Dot(AO) << endl;
+    cout << AC.ToString() << endl;
+    cout << AB.ToString() << endl;
+    cout << AO.ToString() << endl;
+    //判断原点位置
+    if (ABperp.Dot(AO) > 0)
+    {
+        cout << "Get1" << endl;
+        return false;
+    }
+    else if (ACperp.Dot(AO) > 0)
+    {
+        cout << "Get2" << endl;
+        return false;
+    }
+    return true;
+}
 
 int main()
 { 
@@ -54,11 +87,20 @@ int main()
     GameInit();
 
     
-
+    ri.gravity = 0;
     Debug::Instance().Log("Game started");
 
+    //vector<Vector2> s;
+    //s.push_back(Vector2(-5, -5));//B
+    //s.push_back(Vector2(-4, 4));//C
+    //s.push_back(Vector2(-8, -4));//A
+
+    //cout << temp(s) << endl;
+    
     while (true)
     {  
+    
+        
         mainLoop.FixedUpdate(FixedUpdate);
         mainLoop.Update(Update);
     }
@@ -109,7 +151,16 @@ void Physics(RigidBody* Rb)
             continue;
         if (col = dynamic_cast<Collider*>((*_it)->GetComponent<Collider>()))
         {
-            Vector2 res = Rb->SAT(col);
+            Renderer* r = dynamic_cast<Renderer*>(Rb->owner->GetComponent<Renderer>());
+            if (Rb->GJK(col))
+            {
+                r->pixelData = PixelData{ false," ",196 };
+            }
+            else
+            {
+                r->pixelData = PixelData{ false," ",174 };
+            }
+            /*Vector2 res = Rb->SAT(col);
             Renderer* r = dynamic_cast<Renderer*>(Rb->owner->GetComponent<Renderer>());
             Debug::Instance().Log(res.y);
             if (res.x<0&&res.y<0)
@@ -121,7 +172,7 @@ void Physics(RigidBody* Rb)
             else
             {
                 r->pixelData = PixelData{ false," ",199 };
-            }
+            }*/
         }
     }
 }
