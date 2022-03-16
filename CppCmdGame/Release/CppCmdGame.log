@@ -1,0 +1,42 @@
+﻿  Component.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Component.cpp(117,15): warning C4305: “=”: 从“double”到“float”截断
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Component.cpp(151,42): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Component.cpp(346,9): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Component.cpp(362,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Component.cpp(368,10): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  DebugLog.cpp
+  Engine.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Engine.cpp(80,16): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Engine.cpp(193,16): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  GameLoop.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\GameLoop.cpp(6,32): warning C4244: “=”: 从“ULONGLONG”转换到“float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\GameLoop.cpp(11,40): warning C4244: “=”: 从“ULONGLONG”转换到“float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\GameLoop.cpp(14,35): warning C4244: “=”: 从“ULONGLONG”转换到“DWORD”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\GameLoop.cpp(21,31): warning C4244: “=”: 从“ULONGLONG”转换到“DWORD”，可能丢失数据
+  GameObject.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Graphic.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(6,16): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(8,20): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(25,33): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(28,26): warning C4018: “<=”: 有符号/无符号不匹配
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(63,21): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(89,24): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Graphic.cpp(117,24): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+  Input.cpp
+  The contents of <format> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+  Main.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  The contents of <format> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+  Screen.cpp
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\TL\Vscode\VsCode_C\CppCmdGame\CppCmdGame\Screen.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 521 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  CppCmdGame.vcxproj -> D:\TL\Vscode\VsCode_C\CppCmdGame\Release\CmdGameEngine.exe

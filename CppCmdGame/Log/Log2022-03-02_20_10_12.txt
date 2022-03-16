@@ -1,0 +1,525 @@
+Component 'Transform' Added
+Component 'Renderer' Added
+Component 'RigitBody' Added
+Component 'Collider' Added
+Component 'Transform' Added
+Component 'Collider' Added
+Component 'Renderer' Added
+Game started
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0
+Move tox: 18 y: 5.01884
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.3038
+Move tox: 18 y: 5.05739
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.611919
+Move tox: 18 y: 5.34185
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+1.52122
+Move tox: 18 y: 5.45622
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+1.81534
+Move tox: 18 y: 5.58634
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+2.09871
+Move tox: 18 y: 5.73626
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+2.37966
+Move tox: 18 y: 5.90046
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+2.64835
+Move tox: 18 y: 6.08397
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+2.91286
+Move tox: 18 y: 6.28014
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+3.16406
+Move tox: 18 y: 6.49495
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+3.40968
+Move tox: 18 y: 6.72072
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+3.6414
+Move tox: 18 y: 6.96431
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+3.86657
+Move tox: 18 y: 7.21712
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.07767
+Move tox: 18 y: 7.48687
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.28162
+Move tox: 18 y: 7.76412
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.47176
+Move tox: 18 y: 8.05735
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.65448
+Move tox: 18 y: 8.35643
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.82396
+Move tox: 18 y: 8.67056
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+4.98606
+Move tox: 18 y: 8.98897
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.13572
+Move tox: 18 y: 9.3215
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.27826
+Move tox: 18 y: 9.65688
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.40932
+Move tox: 18 y: 10.0055
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.53368
+Move tox: 18 y: 10.3557
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.64763
+Move tox: 18 y: 10.7182
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.75538
+Move tox: 18 y: 11.0812
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+5.85381
+Move tox: 18 y: 11.159
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+1.23588
+Move tox: 18 y: 11.0841
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+1.20811
+Move tox: 18 y: 11.0092
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+1.18921
+Move tox: 18 y: 10.9935
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.253602
+Move tox: 18 y: 10.997
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.0555035
+Move tox: 18 y: 11.0193
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.359284
+Move tox: 18 y: 11.0317
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.198081
+Move tox: 18 y: 11.0308
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.0147982
+Move tox: 18 y: 11.0255
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.0851887
+Move tox: 18 y: 11.0227
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.0442219
+Move tox: 18 y: 11.0231
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00611002
+Move tox: 18 y: 11.0243
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.0196474
+Move tox: 18 y: 11.0249
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00952751
+Move tox: 18 y: 11.0248
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00159384
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00463785
+Move tox: 18 y: 11.0244
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00212753
+Move tox: 18 y: 11.0244
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.000499947
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.00106642
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.000456015
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.000121015
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated
+Component is not exist
+Component 'Renderer' Updated
+Component 'Collider' Updated
+Component 'Transform' Updated
+Component 'Collider' Updated
+Component 'RigitBody' Updated
+a: 
+0.000247697
+Move tox: 18 y: 11.0245
+Component 'Renderer' Updated
+Component 'Transform' Updated

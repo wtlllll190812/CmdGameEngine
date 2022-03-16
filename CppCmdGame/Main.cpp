@@ -20,7 +20,7 @@ Screen mainScreen;
 GameLoop mainLoop(FRAMERATE);
 GameObject game;
 
-Transform t(18, 12);
+Transform t(18, 5);
 Renderer r(&mainScreen, vertex, 4);
 RigidBody ri;
 Collider col1(vertex, 4);
@@ -54,7 +54,6 @@ int main()
     gameObjects.push_front(&game2);
     GameInit();
 
-    ri.gravity = 0;
     Debug::Instance().Log("Game started");
 
 
@@ -114,12 +113,14 @@ void Physics(RigidBody *Rb)
         if (col = dynamic_cast<Collider *>((*_it)->GetComponent<Collider>()))
         {
             Renderer *r = dynamic_cast<Renderer *>(Rb->owner->GetComponent<Renderer>());
-            if (Rb->ColliderCheck(col)==Vector2::zero)
-            {               
+            Vector2 res = Rb->ColliderCheck(col);
+            if (res == Vector2::zero)
+            {
                 r->pixelData = PixelData{false, " ", 174};
             }
             else
-            {                
+            {
+                Rb->AddForce((-Rb->velocity - res * FRAMERATE) * FRAMERATE / 2, forceMode::impules);
                 r->pixelData = PixelData{false, " ", 196};
             }
         }
