@@ -60,7 +60,6 @@ int main()
 
     while (true)
     {
-
         mainLoop.FixedUpdate(FixedUpdate);
         mainLoop.Update(Update);
     }
@@ -79,7 +78,7 @@ void FixedUpdate()
 
     for (auto it = gameObjects.begin(); it != gameObjects.end(); it++)
     {
-        Physics(dynamic_cast<RigidBody *>((*it)->GetComponent<RigidBody>()));
+        Physics((*it)->GetComponent<RigidBody>());
         (*it)->Update();
     }
 
@@ -110,9 +109,9 @@ void Physics(RigidBody *Rb)
         Collider *col;
         if (*_it == Rb->owner)
             continue;
-        if (col = dynamic_cast<Collider *>((*_it)->GetComponent<Collider>()))
+        if (col = (*_it)->GetComponent<Collider>())
         {
-            Renderer *r = dynamic_cast<Renderer *>(Rb->owner->GetComponent<Renderer>());
+            Renderer *r = Rb->owner->GetComponent<Renderer>();
             Vector2 res = Rb->ColliderCheck(col);
             if (res == Vector2::zero)
             {

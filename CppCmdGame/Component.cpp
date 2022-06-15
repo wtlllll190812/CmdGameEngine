@@ -8,18 +8,6 @@ Component::Component()
 	owner = nullptr;
 }
 
-void Component::OnAdd()
-{
-}
-
-void Component::OnRemove()
-{
-}
-
-void Component::OnUpdate()
-{
-}
-
 
 
 Renderer::Renderer(Screen *screen, Vector2 *v, int size) : Component()
@@ -32,7 +20,7 @@ Renderer::Renderer(Screen *screen, Vector2 *v, int size) : Component()
 
 void Renderer::OnAdd()
 {
-	tr = dynamic_cast<Transform *>(owner->GetComponent<Transform>());
+	tr = owner->GetComponent<Transform>();
 	Debug::Instance().Log("Component 'Renderer' Added");
 }
 
@@ -44,7 +32,7 @@ void Renderer::OnRemove()
 void Renderer::OnUpdate()
 {
 	if (!tr)
-		tr = dynamic_cast<Transform *>(owner->GetComponent<Transform>());
+		tr = owner->GetComponent<Transform>();
 	else
 	{
 		Vector2 *v = tr->ObjectToWorld(vertex, vertexNumber);
@@ -134,7 +122,7 @@ void RigidBody::AddForce(Vector2 _force, forceMode mode)
 void RigidBody::OnAdd()
 {
 	Debug::Instance().Log("Component 'RigitBody' Added");
-	tr = dynamic_cast<Transform *>(owner->GetComponent<Transform>());
+	tr = owner->GetComponent<Transform>();
 }
 
 void RigidBody::OnRemove()
@@ -166,7 +154,7 @@ Vector2 RigidBody::ColliderCheck(Collider* col2)
 {	
 	if (!col)
 	{
-		col = dynamic_cast<Collider*>(owner->GetComponent<Collider>());
+		col = owner->GetComponent<Collider>();
 		if (!col)
 			return Vector2::zero;
 	}
@@ -207,7 +195,7 @@ Vector2 RigidBody::SAT(Collider *col2)
 	Vector2 res(0, 0);
 
 	if (!col)
-		col = dynamic_cast<Collider *>(owner->GetComponent<Collider>());
+		col = owner->GetComponent<Collider>();
 	else
 	{
 		Vector2 *c1 = tr->ObjectToWorld(col->vertex, col->vertexNumber);
@@ -386,7 +374,7 @@ Collider::Collider(Vector2 data[], int size)
 void Collider::OnAdd()
 {
 	Debug::Instance().Log("Component 'Collider' Added");
-	tr = dynamic_cast<Transform *>(owner->GetComponent<Transform>());
+	tr = owner->GetComponent<Transform>();
 }
 
 void Collider::OnRemove()

@@ -32,13 +32,14 @@ public:
      * @param T 组件类型
      */
     template <class T>
-    Component *GetComponent()
+    T *GetComponent()
     {
         for (auto it = components.begin(); it != components.end(); it++)
         {
-            if (dynamic_cast<T *>(*it))
+            auto com=dynamic_cast<T*>(*it);
+            if (com)
             {
-                return *it;
+                return com;
             }
         }
         Debug::Instance().Log("Component is not exist");

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <vector>
 using namespace std;
 
 class Vector3;
@@ -88,4 +89,12 @@ public:
 	static float time;
 	static float deltaTime;
 };
+class BoundBox
+{
+public:
+	float x[2] = { FLT_MAX,FLT_MIN };
+	float y[2] = { FLT_MAX,FLT_MIN };
+	BoundBox(const vector<Vector2>& points);
+};
+
 #endif

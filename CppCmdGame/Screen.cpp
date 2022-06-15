@@ -58,6 +58,8 @@ void FrameBuffer::Swap() //交换缓存区
     currentData = temp;
 }
 
+
+
 Screen::Screen()
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);

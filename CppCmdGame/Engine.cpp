@@ -120,6 +120,8 @@ string Vector2::ToString()
     return s;
 }
 
+
+
 Vector3::Vector3()
 {
     x = 0;
@@ -239,3 +241,14 @@ string Vector3::ToString()
 
 float Time::deltaTime = 0;
 float Time::time = 0;
+
+BoundBox::BoundBox(const vector<Vector2>& points)
+{
+    for (Vector2 i : points)
+    {
+        if (i.x < x[0])x[0] = i.x;
+        if (i.x < x[1])x[1] = i.x;
+        if (i.x < y[0])y[0] = i.y;
+        if (i.x > y[1])y[1] = i.y;
+    }
+}

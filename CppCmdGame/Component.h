@@ -31,9 +31,9 @@ public:
     GameObject *owner;
 
     Component();
-    virtual void OnAdd();    //组件添加时
-    virtual void OnRemove(); //组件移除时
-    virtual void OnUpdate(); //组件更新
+    virtual void OnAdd()=0;    //组件添加时
+    virtual void OnRemove()=0; //组件移除时
+    virtual void OnUpdate()=0; //组件更新
 };
 
 class Renderer : public Component //渲染器组件
@@ -111,11 +111,11 @@ public:
      */
     void AddForce(Vector2, forceMode);
     //组件添加时
-    void OnAdd();
+    virtual void OnAdd();
     //组件移除时
-    void OnRemove();
+    virtual void OnRemove();
     //组件更新
-    void OnUpdate();
+    virtual void OnUpdate();
 
     Vector2 ColliderCheck(Collider* col2);
 
@@ -163,10 +163,10 @@ public:
 
     Collider(Vector2[], int);
     //组件添加时
-    void OnAdd();
+    virtual void OnAdd();
     //组件移除时
-    void OnRemove();
+    virtual void OnRemove();
     //组件更新
-    void OnUpdate();
+    virtual void OnUpdate();
 };
 #endif
